@@ -9,7 +9,7 @@ RUN \
   apk add \
     alpine-sdk \
     build-base  \
-    Python \
+    python3  \
     tcl-dev \
     tk-dev \
     mesa-dev \
