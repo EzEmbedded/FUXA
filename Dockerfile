@@ -3,13 +3,6 @@ FROM node:14.21.0-alpine3.16
 # Create app directory
 WORKDIR /usr/src/app
 
-RUN git clone https://github.com/EzEmbedded/FUXA.git
-WORKDIR /usr/src/app/FUXA
-
-# Install server
-WORKDIR /usr/src/app/FUXA/server
-RUN npm install
-
 RUN \
   apk update && \
   apk upgrade && \
@@ -22,6 +15,13 @@ RUN \
     jpeg-dev \
     git \
     libjpeg-turbo-dev
+
+RUN git clone https://github.com/EzEmbedded/FUXA.git
+WORKDIR /usr/src/app/FUXA
+
+# Install server
+WORKDIR /usr/src/app/FUXA/server
+RUN npm install
 
 
 # Workaround for sqlite3 https://stackoverflow.com/questions/71894884/sqlite3-err-dlopen-failed-version-glibc-2-29-not-found
