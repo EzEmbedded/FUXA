@@ -3,7 +3,7 @@ FROM node:14.21.0-alpine3.16
 # Create app directory
 WORKDIR /usr/src/app
 
-RUN git clone https://github.com/frangoteam/FUXA.git
+RUN git clone https://github.com/EzEmbedded/FUXA.git
 WORKDIR /usr/src/app/FUXA
 
 # Install server
