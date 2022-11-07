@@ -1,6 +1,8 @@
 # Build Stage
 FROM node:14.21.0-alpine3.16 AS build
 
+RUN apk update && apk upgrade
+RUN apk add --no-cache sqlite~=3.38.5-r0
 RUN \
   apk update && \
   apk upgrade && \
@@ -18,19 +20,14 @@ RUN \
 # Create app directory
 WORKDIR /usr/src/app
 
-
-
 RUN git clone https://github.com/EzEmbedded/FUXA.git
 WORKDIR /usr/src/app/FUXA
 
 # Install server
 WORKDIR /usr/src/app/FUXA/server
 RUN npm install
-
-
 ADD . /usr/src/app/FUXA
 
-WORKDIR /usr/src/app/FUXA/server
 
 # main Stage
 FROM node:14.21.0-alpine3.16
