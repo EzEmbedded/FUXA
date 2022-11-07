@@ -34,7 +34,7 @@ FROM node:14.21.0-alpine3.16
 RUN apk update && apk upgrade
 RUN apk add --no-cache sqlite~=3.38.5-r0
 WORKDIR /usr/src/app/
-COPY --from=build /usr/src/app/FUXA /usr/src/app/
+COPY --from=build /usr/src/app/FUXA /usr/src/app//FUXA
 WORKDIR /usr/src/app/FUXA/server
 EXPOSE 1881
 CMD [ "npm", "start" ]
