@@ -1,7 +1,21 @@
 FROM node:14.21.0-alpine3.16
 
 RUN apk update && apk upgrade
-RUN apk add --no-cache git sqlite~=3.38.5-r0
+RUN apk add --no-cache sqlite~=3.38.5-r0
+
+RUN \
+  apk update && \
+  apk upgrade && \
+  apk add \
+    alpine-sdk \
+    build-base  \
+    python3  \
+    tcl-dev \
+    tk-dev \
+    mesa-dev \
+    jpeg-dev \
+    git \
+    libjpeg-turbo-dev
 
 # Create app directory
 WORKDIR /usr/src/app
