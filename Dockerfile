@@ -7,8 +7,8 @@ RUN \
   apk update && \
   apk upgrade && \
   apk add \
-#    alpine-sdk \
-#    build-base  \
+    alpine-sdk \
+    build-base  \
     python3  \
 #    tcl-dev \
 #    tk-dev \
