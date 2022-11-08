@@ -14,7 +14,7 @@ RUN \
 #    tk-dev \
 #    mesa-dev \
 #    jpeg-dev \
-    git \
+    git 
 #    libjpeg-turbo-dev
 
 # Create app directory
