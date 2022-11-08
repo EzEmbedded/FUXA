@@ -1,8 +1,8 @@
 # Build Stage
 FROM node:14.21.0-alpine3.16 AS build
 # ENV NODE_ENV production
-# RUN apk update && apk upgrade
-# RUN apk add --no-cache sqlite~=3.38.5-r0
+RUN apk update && apk upgrade
+RUN apk add --no-cache sqlite~=3.38.5-r0
 RUN \
   apk update && \
   apk upgrade && \
