@@ -25,8 +25,8 @@ WORKDIR /usr/src/app/FUXA
 
 # Install server
 WORKDIR /usr/src/app/FUXA/server
-RUN npm install
-# RUN npm --only=production
+# RUN npm install
+RUN npm --production
 ADD . /usr/src/app/FUXA
 
 
